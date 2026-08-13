@@ -6,7 +6,7 @@ on:
       - lesson-2
 jobs:
   deploy:
-    needs: build_and_test
+    needs: [build_and_test]
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -20,7 +20,6 @@ jobs:
         run: zip -r deploy.zip . -x '*.git*'
       - name: '**PLACEHOLDER** Deploy to Elastic Beanstalk'
         run: echo Placeholder for Deployment
-
   build_and_test:
     runs-on: ubuntu-latest
     steps:
